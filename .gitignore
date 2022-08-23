@@ -3,3 +3,4 @@ Thumbs.d
 .idea/
 .vscode/
 Brewfile.lock.json
+*.code-workspace
