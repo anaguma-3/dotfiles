@@ -1,6 +1,6 @@
 DOTPATH    := $(realpath $(dir $(lastword $(MAKEFILE_LIST))))
 TARGETS    := $(wildcard .??*) bin
-EXCLUSIONS := .DS_Store .git .gitmodules .github .config
+EXCLUSIONS := .DS_Store .git .gitmodules .github
 DOTFILES   := $(filter-out $(EXCLUSIONS), $(TARGETS))
 
 .DEFAULT_GOAL := help

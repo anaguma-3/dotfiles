@@ -4,3 +4,5 @@ Thumbs.d
 .vscode/
 Brewfile.lock.json
 *.code-workspace
+.config/gh/
+.config/iterm2/
