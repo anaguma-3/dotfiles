@@ -1,6 +1,6 @@
 DOTPATH    := $(realpath $(dir $(lastword $(MAKEFILE_LIST))))
 TARGETS    := $(wildcard .??*) bin
-EXCLUSIONS := .DS_Store .git .gitmodules .github
+EXCLUSIONS := .DS_Store .git .gitmodules .github .config
 DOTFILES   := $(filter-out $(EXCLUSIONS), $(TARGETS))
 
 .DEFAULT_GOAL := help
@@ -14,6 +14,7 @@ ifeq ($(shell uname),Darwin)
 deploy: # Create symbolic links to home directory
 	@echo "==> Start to deploy dotfiles to home directory."
 	@$(foreach val, $(DOTFILES), ln -sfnv $(abspath $(val)) $(HOME)/$(val);)
+	@ln -sfnv $(DOTPATH)/.config/starship.toml ~/.config/starship.toml
 	@ln -sfnv $(DOTPATH)/iterm2/com.googlecode.iterm2.plist ~/Library/Preferences/com.googlecode.iterm2.plist
 	@echo "==> Grant execution rights to '~/bin/**'."
 	@chmod +x ~/bin/**
