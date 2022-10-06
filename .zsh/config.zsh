@@ -88,43 +88,19 @@ ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=244"
 # Go
 # ----------------------------
 export GO111MODULE=on
-export PATH="$(go env GOROOT)/bin:$PATH"
-export PATH="$(go env GOPATH)/bin:$PATH"
+export GOPATH=$HOME/go
+export PATH=$PATH:/usr/local/go/bin
 
 # ----------------------------
 # Ruby
 # ----------------------------
+export PATH="$HOME/.rbenv/bin:$PATH"
 eval "$(rbenv init - zsh)"
-export PATH="$HOME/.rbenv/shims:$PATH"
-export RUBY_CONFIGURE_OPTS="--with-openssl-dir=$(brew --prefix openssl@1.1)"
-
-# ----------------------------
-# Rust
-# ----------------------------
-source $HOME/.cargo/env
-export PATH="$HOME/.cargo/bin:$PATH"
-
-# ----------------------------
-# Node.js
-# ----------------------------
-eval "$(nodenv init -)"
-
-# ----------------------------
-# z
-# ----------------------------
-. `brew --prefix`/etc/profile.d/z.sh
 
 # ----------------------------
 # ls
 # ----------------------------
 export LSCOLORS=gxfxcxdxbxegedabagacad
-
-# ----------------------------
-# cd
-# ----------------------------
-# auto cd
-setopt AUTO_CD
-cdpath=(.. ~ ~/src)
 
 # auto ls
 chpwd() {

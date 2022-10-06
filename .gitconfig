@@ -1,6 +1,6 @@
 [user]
-    name = Takumi Yoshida
-    email = umibooose@gmail.com
+	name = anaguma-3
+	email = haruna.may23@gmail.com
 
 [alias]
     # add
@@ -59,14 +59,8 @@
 [color]
     ui = auto
 
-[ghq]
-    root = ~/go/src
-	root = ~/Development/
-[ghq "https://github.com/Fablic"]
-    root = ~/Fablic/
-
 [github]
-	user = craft-cat
+    user = anaguma-3
 
 [grep]
     lineNumber = true
